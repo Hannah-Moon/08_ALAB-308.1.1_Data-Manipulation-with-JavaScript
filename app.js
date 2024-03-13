@@ -64,9 +64,9 @@ const dontDoThis = ((n1 + n2 + n3 + n4) == 50) &&
 
 
 
-//------------------ //
-// Part 1:  //
-//------------------ //
+//---------------------- //
+// Part 1: Math Problems //
+//---------------------- //
 
 
 // 1. Check if all numbers are divisible by 5. Cache the result in a variable.
@@ -76,25 +76,35 @@ const dontDoThis = ((n1 + n2 + n3 + n4) == 50) &&
 // const isDivisibleBy5 = n4 % 5;
 // console.log(isDivisibleBy5);
 
-const isDivisibleBy5 = (n1 % 5) + (n2 % 5) + (n3 % 5) + (n4 % 5) ===0;
+const isDivisibleBy5 = (n1 % 5) + (n2 % 5) + (n3 % 5) + (n4 % 5) === 0;
 console.log(isDivisibleBy5)
 
+console.log('\n')
 
 
 // 2. Check if the first number is larger than the last. Cache the result in a variable.
+
 const isFirstLargerThanLast = n1 > n4;
 console.log(isFirstLargerThanLast)
+/* Tried different method */
+console.log(`Is first number N1 greater than the last number N4: ${isFirstLargerThanLast}`);
+
+console.log('\n')
 
 // 3. Accomplish the following arithmetic chain:
 //    - Subtract the first number from the second number.
 //    - Multiply the result by the third number.
 //    - Find the remainder of dividing the result by the fourth number.
-  const arithmeticChain = (n1 - n2);
-  console.log ('subtraction from first number to last: ${arithmeticChain}.')
+  const arithmeticChain = (n2 - n1);
+  console.log (`The first outcome_Subtraction the first number from the second number: ${arithmeticChain}.`)
   const mulipleOf3 = (arithmeticChain * 3);
-  console.log ("multiplication of 3 : ${mulipleOf3}.");
+  console.log (`The second outcome_Multiple the first outcome 3 times : ${mulipleOf3}.`);
   const remainder = (mulipleOf3 % n4);
-  console.log ("remainding : ${remainder}.");
+  console.log (`The third outcome_Now we see the remainder when we divide the second outcome by the fourth number N4 : ${remainder}.`);
+
+  /* Another way of solving no.3 problem */
+  const arithmeticChain_O1 = ((n1 - n2) * n3) % n4;
+  console.log(`This is antoher way to calculate the above problems: ${arithmeticChain_O1}`)
 
 
 // 4. Change the way that isOver25 calculates so that we do not need 
@@ -103,10 +113,13 @@ console.log(isFirstLargerThanLast)
 // 
 //    ** const isOver25 = n1 > 25 || n2 > 25 || n3 > 25 || n4 > 25;
 
-const isOver25_V1 = n1 <= 25 && n2 <= 25 && n3 <= 25 && n4 <= 25;
-console.log (isOver25_V1)
+    const isLessThanOrEqualTo25 = n1 <= 25 && n2 <= 25 && n3 <= 25 && n4 <= 25;
+    console.log(`Are all give numbers equal to or under 25? ${isLessThanOrEqualTo25}`)
 
-
+    const isUnder25 = n1 < 25 && n2 < 25 && n3 < 25 && n4 < 25;
+    console.log(`Are all given numbers under 25? ${isUnder25}`);
+    
+    console.log('\n')
 
 //----------------------- //
 // Part 2: Practical Math //
@@ -123,32 +136,136 @@ console.log (isOver25_V1)
 // The average cost of fuel is $3 per gallon.
 // Set up a program to answer the following questions:
 
+/* -------------- First, I want to set up a groundwork by giving 'const' for each value. -------------- */
+
+const totalDistance = 1500; // total miles you have to travel
+const fuelBudget = 175;     // you have only 175 budge 
+const costPerGallon = 3;    // everage cost of fuel at whatever place this person is living
+
+const fe1_55mph = 30;  // At 55 miles per hour, you get 30 miles per gallon.
+const fe2_60mph = 28; // At 60 miles per hour, you get 28 miles per gallon.
+const fe3_75mph= 23;   // At 75 miles per hour, you get 23 miles per gallon.
+
+const speed55mph = 55;  //  Mile you run at 55mph speed
+const speed60mph = 60;  //  Mile you run at 60mph speed
+const speed75mph = 75;  //  Mile you run at 75mph speed
+
+const t1 = totalDistance / speed55mph; // Time spent 
+console.log(`* At 55 mph: time 1 = ${t1}`)
+const t2 = totalDistance / speed60mph;
+console.log(`* At 60 mph: time 2 = ${t2}`)
+const t3 = totalDistance / speed75mph;
+console.log(`* At 75 mph: time 2 = ${t3}`)
+const totalTime = t1 + t2 + t3
+console.log(`Total time equals to ${totalTime}`)
+
+// We don't this this part.
+// const d1 = speed55mph * t1; //distace at 55ph
+// const d2 = speed60mph * t2; //distace at 60ph
+// const d3 = speed75mph * t3; //distace at 75ph
+// const totalDistanceForTrip = d1 + d2 + d3
+// console.log(`Total distance equals to ${totalDistanceForTrip}`)
+
+/* -------------- Second, I want to answer the questions one by one. -------------- */
+
 // 1. How many gallons of fuel will you need for the entire trip?
-// Constants
+//    To answer this question, the equation should be as below:
+//    First, we need to calculate the time it will take to complete the trip at each speed:
+//    * At 55 mph: time 1 = 1500 miles / 55 mph = Approx.27.27
+//    * At 60 mph: time 2 = 1500 miles / 60 mph = 25
+//    * At 75 mph: time 3 = 1500 miles / 75 mph = 20
+
+//    Now, we need to calculate the fuel consumption for each segment of the trip:
+//    * At 55 mph: fuel 1 = 1500 miles / 30 mpg = 50
+//    * At 55 mph: fuel 1 = 1500 miles / 28 mpg = Approx.53.57
+//    * At 55 mph: fuel 1 = 1500 miles / 23 mpg = Approx.65.22
+
+const firstQuestion = 1
+console.log(`This is the answer for the question no.1 in Part 2`)
+
+console.log("Part 2: Practical Math");
+let roadTrip = {
+    trip: 1500,
+    budget: 175,
+    costPG: 3
+};
+
+const mph1 = 55;
+const mph2 = 60;
+const mph3 = 75;
+
+function roadTripCalculator(mph) {
+    console.log(`We will be traveling at: ${mph} mph`);
+    const mpg = mph === 55 ? 30 :
+        mph === 60 ? 28 : 23;
+
+    let gallonsReq = Math.ceil(roadTrip.trip / mpg);
+
+    console.log(`Gallons of gasoline required for trip: ${gallonsReq}`);
+
+    const enoughBudget = roadTrip.costPG * gallonsReq <= roadTrip.budget;
+    console.log(`Is budget enough to cover expense on gasoline?: ${enoughBudget}`);
+
+    const tripDuration = roadTrip.trip / mph;
+    console.log(`The trip will take: ${tripDuration} hours to complete.`);
+}
+
+roadTripCalculator(mph1);
+console.log('\n');
+roadTripCalculator(mph2);
+console.log('\n');
+roadTripCalculator(mph3);
+
+
 
 // 2. Will your budget be enough to cover the fuel expense?
 
+
 // 3. How long will the trip take, in hours?
 
-const totalDistance = 1500; //miles
-const fuelBudget = 175;  //dollars
-const costPerGallon = 3;  // dollars
 
-const fuelEffeciency55mph = 30;  //miles per gallon
-const fuelEffenciency60mph = 28;  //miles per gallon
-const fuelEffeciency75mph= 23;  //miles per gallon
 
-const speed55mph = 55;  //miles per hour
-const speed60mph = 60;  //miles per hour
-const speed75mph = 75;  // miles per hour
+// Set this aside for now. Recycle this for later. 
+// const gallonsNeeded55mph = totalDistance / fe1_55mph 
+// console.log(`We need this much gallon to travel: ${gallonsNeeded55mph}`);
 
-const gallonsNeeded55mph = totalDistance / fuelEffeciency55mph 
-console.log('We need this much gallon to travel: ${gallonsNeeded55mph}');
+// const totalCost55mph = gallonsNeeded55mph * costPerGallon
+// console.log(`We need a total cost: ${totalCost55mph} for 55mph trip.`);
 
-const totalCost55mph = gallonsNeeded55mph * costPerGallon
-console.log('We need a total cost: ${totalCost55mph} for 55mph trip.');
+// const isBudgetEnough55mph = totalCost55mph <= fuelBudget
+// console.log(`Is budget enough to make this trip: ${isBudgetEnough55mph}`)
 
-const isBudgetEnough55mph = totalCost55mph <= fuelBudget
-console.log("Is budget enough to make this trip: $")
 
-const tripTime55mph = totalDistance / speed55mph
+//----------------------- //
+// Part 3: Practical Math //
+//----------------------- //
+
+console.log('\n');
+console.log("Part 3: Future Exploration");
+
+const speed = [55, 60, 75];
+
+function roadTripCalculator2(speed, n) {
+    if (n < 0) return;
+
+    let mpg = speed[n] === 55 ? 30 :
+        speed[n] === 60 ? 28 : 23;
+
+    let gallonsReq = Math.ceil(roadTrip.trip / mpg);
+
+    let enoughBudget = roadTrip.costPG * gallonsReq <= roadTrip.budget;
+
+    if (!enoughBudget) {
+        roadTripCalculator2(speed, n - 1);
+    } else {
+
+        const tripDuration = roadTrip.trip / speed[n];
+
+        console.log(`We will be traveling at: ${speed[n]} mph for optimal speed.`);
+        console.log(`Gallons of gasoline required for trip: ${gallonsReq}`);
+        console.log(`The trip will take: ${tripDuration} hours to complete.`);
+    }
+}
+
+roadTripCalculator2(speed, speed.length - 1);
+console.log('\n');
