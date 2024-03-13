@@ -1,0 +1,49 @@
+/* GOOGLE FONTS */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+/* GLOBAL VARIABLE*/
+:root {
+  --header-height: 3rem;
+  --font-semi: 600;
+  
+/* COLOR */
+  --hue-color: 224;
+  --first-color: #5a189a;
+  --second-color: #10002b;
+  --third-color: #f0e6ef;
+
+/* TYPO GRAPHY */
+  --body-font: "Poppins", sans-serif;
+  --big-font-size: 2rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: .80rem;
+  --normal-font-size: .938rem;
+  --smaller-font-size: .75rem;
+  --exsmall-font-size: .70rem;
+  --exexsmall-font-size: .65rem;
+
+/* MARGIN  */
+  --mb-2: 1rem;
+  --mb-4: 2rem;
+  --mb-5: 2.5rem;
+  --mb-6: 3rem;
+
+Z-INDEX 
+  --z-back: -10;
+  --z-fixed: 100;
+}
+
+@media screen and (min-width: 968px) {
+  :root {
+    --big-font-size: 3.5rem;
+    --h2-font-size: 2rem;
+    --normal-font-size: 1rem;
+    --smaller-font-size: .875rem;
+  }
+}
+
+/*  */
+
+h1{
+    color: green;
+}
