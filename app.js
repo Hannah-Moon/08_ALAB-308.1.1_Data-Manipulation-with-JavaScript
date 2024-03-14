@@ -245,32 +245,32 @@ console.log(`Budget enough: ${isBudgetEnough75 ? "Yes" : "No"}`);
 // Part 3: Practical Math //
 //----------------------- //
 
-console.log('\n');
-console.log("Part 3: Future Exploration");
+// console.log('\n');
+// console.log("Part 3: Future Exploration");
 
-const speed = [55, 60, 75];
+// const speed = [55, 60, 75];
 
-function roadTripCalculator2(speed, n) {
-    if (n < 0) return;
+// function roadTripCalculator2(speed, n) {
+//     if (n < 0) return;
 
-    let mpg = speed[n] === 55 ? 30 :
-        speed[n] === 60 ? 28 : 23;
+//     let mpg = speed[n] === 55 ? 30 :
+//         speed[n] === 60 ? 28 : 23;
 
-    let gallonsReq = Math.ceil(roadTrip.trip / mpg);
+//     let gallonsReq = Math.ceil(roadTrip.trip / mpg);
 
-    let enoughBudget = roadTrip.costPG * gallonsReq <= roadTrip.budget;
+//     let enoughBudget = roadTrip.costPG * gallonsReq <= roadTrip.budget;
 
-    if (!enoughBudget) {
-        roadTripCalculator2(speed, n - 1);
-    } else {
+//     if (!enoughBudget) {
+//         roadTripCalculator2(speed, n - 1);
+//     } else {
 
-        const tripDuration = roadTrip.trip / speed[n];
+//         const tripDuration = roadTrip.trip / speed[n];
 
-        console.log(`We will be traveling at: ${speed[n]} mph for optimal speed.`);
-        console.log(`Gallons of gasoline required for trip: ${gallonsReq}`);
-        console.log(`The trip will take: ${tripDuration} hours to complete.`);
-    }
-}
+//         console.log(`We will be traveling at: ${speed[n]} mph for optimal speed.`);
+//         console.log(`Gallons of gasoline required for trip: ${gallonsReq}`);
+//         console.log(`The trip will take: ${tripDuration} hours to complete.`);
+//     }
+// }
 
-roadTripCalculator2(speed, speed.length - 1);
-console.log('\n');
+// roadTripCalculator2(speed, speed.length - 1);
+// console.log('\n');
