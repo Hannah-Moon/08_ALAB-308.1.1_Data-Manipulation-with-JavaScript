@@ -180,49 +180,54 @@ console.log(`Total time equals to ${totalTime}`)
 //    * At 55 mph: fuel 1 = 1500 miles / 28 mpg = Approx.53.57
 //    * At 55 mph: fuel 1 = 1500 miles / 23 mpg = Approx.65.22
 
-const firstQuestion = 1
-console.log(`This is the answer for the question no.1 in Part 2`)
-
-console.log("Part 2: Practical Math");
-let roadTrip = {
-    trip: 1500,
-    budget: 175,
-    costPG: 3
-};
-
-const mph1 = 55;
-const mph2 = 60;
-const mph3 = 75;
-
-function roadTripCalculator(mph) {
-    console.log(`We will be traveling at: ${mph} mph`);
-    const mpg = mph === 55 ? 30 :
-        mph === 60 ? 28 : 23;
-
-    let gallonsReq = Math.ceil(roadTrip.trip / mpg);
-
-    console.log(`Gallons of gasoline required for trip: ${gallonsReq}`);
-
-    const enoughBudget = roadTrip.costPG * gallonsReq <= roadTrip.budget;
-    console.log(`Is budget enough to cover expense on gasoline?: ${enoughBudget}`);
-
-    const tripDuration = roadTrip.trip / mph;
-    console.log(`The trip will take: ${tripDuration} hours to complete.`);
-}
-
-roadTripCalculator(mph1);
-console.log('\n');
-roadTripCalculator(mph2);
-console.log('\n');
-roadTripCalculator(mph3);
-
-
-
 // 2. Will your budget be enough to cover the fuel expense?
 
 
 // 3. How long will the trip take, in hours?
 
+
+// Constants
+const totalDistance_1 = 1500; // miles
+const fuelEfficiency = {
+    55: 30, // miles per gallon
+    60: 28, // miles per gallon
+    75: 23  // miles per gallon
+};
+const fuelBudget_1 = 175; // dollars
+const costPerGallon_1 = 3; // dollars
+
+// Calculate fuel needed for the entire trip
+const fuelNeeded55 = totalDistance_1 / fuelEfficiency[55];
+const fuelNeeded60 = totalDistance_1 / fuelEfficiency[60];
+const fuelNeeded75 = totalDistance_1 / fuelEfficiency[75];
+
+// Check if the budget is enough to cover the fuel expense
+const isBudgetEnough55 = fuelNeeded55 * costPerGallon <= fuelBudget;
+const isBudgetEnough60 = fuelNeeded60 * costPerGallon <= fuelBudget;
+const isBudgetEnough75 = fuelNeeded75 * costPerGallon <= fuelBudget;
+
+// Calculate the time taken for the trip
+const tripTime55 = totalDistance_1 / 55;
+const tripTime60 = totalDistance_1 / 60;
+const tripTime75 = totalDistance_1 / 75;
+
+// Compare results for traveling at different speeds
+console.log(`At 55 miles per hour:`);
+console.log(`Fuel needed: ${fuelNeeded55.toFixed(2)} gallons`);
+console.log(`Trip time: ${tripTime55.toFixed(2)} hours`);
+console.log(`Budget enough: ${isBudgetEnough55 ? "Yes" : "No"}`);
+console.log();
+
+console.log(`At 60 miles per hour:`);
+console.log(`Fuel needed: ${fuelNeeded60.toFixed(2)} gallons`);
+console.log(`Trip time: ${tripTime60.toFixed(2)} hours`);
+console.log(`Budget enough: ${isBudgetEnough60 ? "Yes" : "No"}`);
+console.log();
+
+console.log(`At 75 miles per hour:`);
+console.log(`Fuel needed: ${fuelNeeded75.toFixed(2)} gallons`);
+console.log(`Trip time: ${tripTime75.toFixed(2)} hours`);
+console.log(`Budget enough: ${isBudgetEnough75 ? "Yes" : "No"}`);
 
 
 // Set this aside for now. Recycle this for later. 
